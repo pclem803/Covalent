@@ -6,7 +6,7 @@ namespace IdentityServer.Data.Migrations.IdentityServer.ConfigurationDb
     public partial class SeedConfigurationMigration : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
-        {
+        { 
             migrationBuilder.InsertData(
                 table: "ApiResources",
                 columns: new[] { "Id", "Created", "Description", "DisplayName", "Enabled", "LastAccessed", "Name", "NonEditable", "Updated" },

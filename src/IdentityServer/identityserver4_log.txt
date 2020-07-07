@@ -36,3 +36,125 @@
 2020-07-07 10:55:51.808 -05:00 [INF] AuthenticationScheme: Identity.Application signed in.
 2020-07-07 10:55:51.831 -05:00 [INF] {"Username":"alice","Provider":null,"ProviderUserId":null,"SubjectId":"1","DisplayName":"alice","Endpoint":"UI","ClientId":null,"Category":"Authentication","Name":"User Login Success","EventType":"Success","Id":1000,"Message":null,"ActivityId":"80000008-0006-fd00-b63f-84710c7967bb","TimeStamp":"2020-07-07T15:55:51.0000000Z","ProcessId":19528,"LocalIpAddress":"::1:5000","RemoteIpAddress":"::1","$type":"UserLoginSuccessEvent"}
 2020-07-07 10:55:51.921 -05:00 [DBG] 0 persisted grants found for 1
+2020-07-07 11:21:37.017 -05:00 [INF] Starting host...
+2020-07-07 11:21:38.422 -05:00 [INF] Starting IdentityServer4 version 3.1.0.0
+2020-07-07 11:21:38.543 -05:00 [INF] Using the default authentication scheme Identity.Application for IdentityServer
+2020-07-07 11:21:38.544 -05:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for authentication
+2020-07-07 11:21:38.544 -05:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-in
+2020-07-07 11:21:38.544 -05:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-out
+2020-07-07 11:21:38.544 -05:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for challenge
+2020-07-07 11:21:38.544 -05:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for forbid
+2020-07-07 11:21:38.728 -05:00 [DBG] Login Url: /Account/Login
+2020-07-07 11:21:38.729 -05:00 [DBG] Login Return Url Parameter: ReturnUrl
+2020-07-07 11:21:38.729 -05:00 [DBG] Logout Url: /Account/Logout
+2020-07-07 11:21:38.730 -05:00 [DBG] ConsentUrl Url: /consent
+2020-07-07 11:21:38.730 -05:00 [DBG] Consent Return Url Parameter: returnUrl
+2020-07-07 11:21:38.730 -05:00 [DBG] Error Url: /home/error
+2020-07-07 11:21:38.730 -05:00 [DBG] Error Id Parameter: errorId
+2020-07-07 11:21:46.032 -05:00 [DBG] CORS request made for path: /Account/Logout from origin: null but was ignored because path was not for an allowed IdentityServer CORS endpoint
+2020-07-07 11:21:46.073 -05:00 [INF] AuthenticationScheme: Identity.Application signed out.
+2020-07-07 11:21:46.074 -05:00 [INF] AuthenticationScheme: Identity.External signed out.
+2020-07-07 11:21:46.074 -05:00 [INF] AuthenticationScheme: Identity.TwoFactorUserId signed out.
+2020-07-07 11:21:46.093 -05:00 [INF] {"SubjectId":"1","DisplayName":"Alice Smith","Category":"Authentication","Name":"User Logout Success","EventType":"Success","Id":1002,"Message":null,"ActivityId":"80000007-0001-fe00-b63f-84710c7967bb","TimeStamp":"2020-07-07T16:21:46.0000000Z","ProcessId":26544,"LocalIpAddress":"::1:5000","RemoteIpAddress":"::1","$type":"UserLogoutSuccessEvent"}
+2020-07-07 11:21:48.671 -05:00 [INF] AuthenticationScheme: Identity.Application was challenged.
+2020-07-07 11:22:01.997 -05:00 [DBG] CORS request made for path: /Account/Login from origin: null but was ignored because path was not for an allowed IdentityServer CORS endpoint
+2020-07-07 11:22:03.181 -05:00 [INF] {"Username":"alice","Endpoint":"UI","ClientId":null,"Category":"Authentication","Name":"User Login Failure","EventType":"Failure","Id":1001,"Message":"invalid credentials","ActivityId":"8000000b-0001-fe00-b63f-84710c7967bb","TimeStamp":"2020-07-07T16:22:03.0000000Z","ProcessId":26544,"LocalIpAddress":"::1:5000","RemoteIpAddress":"::1","$type":"UserLoginFailureEvent"}
+2020-07-07 11:22:47.390 -05:00 [INF] Starting host...
+2020-07-07 11:22:48.793 -05:00 [INF] Starting IdentityServer4 version 3.1.0.0
+2020-07-07 11:22:48.926 -05:00 [INF] Using the default authentication scheme Identity.Application for IdentityServer
+2020-07-07 11:22:48.926 -05:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for authentication
+2020-07-07 11:22:48.926 -05:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-in
+2020-07-07 11:22:48.926 -05:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-out
+2020-07-07 11:22:48.926 -05:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for challenge
+2020-07-07 11:22:48.926 -05:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for forbid
+2020-07-07 11:22:49.130 -05:00 [DBG] Login Url: /Account/Login
+2020-07-07 11:22:49.131 -05:00 [DBG] Login Return Url Parameter: ReturnUrl
+2020-07-07 11:22:49.131 -05:00 [DBG] Logout Url: /Account/Logout
+2020-07-07 11:22:49.131 -05:00 [DBG] ConsentUrl Url: /consent
+2020-07-07 11:22:49.131 -05:00 [DBG] Consent Return Url Parameter: returnUrl
+2020-07-07 11:22:49.131 -05:00 [DBG] Error Url: /home/error
+2020-07-07 11:22:49.131 -05:00 [DBG] Error Id Parameter: errorId
+2020-07-07 11:22:50.905 -05:00 [INF] AuthenticationScheme: Identity.Application was challenged.
+2020-07-07 11:22:54.399 -05:00 [DBG] CORS request made for path: /Account/Login from origin: null but was ignored because path was not for an allowed IdentityServer CORS endpoint
+2020-07-07 11:22:55.583 -05:00 [INF] {"Username":"alice","Endpoint":"UI","ClientId":null,"Category":"Authentication","Name":"User Login Failure","EventType":"Failure","Id":1001,"Message":"invalid credentials","ActivityId":"8000000e-0001-fe00-b63f-84710c7967bb","TimeStamp":"2020-07-07T16:22:55.0000000Z","ProcessId":11312,"LocalIpAddress":"::1:5000","RemoteIpAddress":"::1","$type":"UserLoginFailureEvent"}
+2020-07-07 11:23:29.744 -05:00 [INF] Starting host...
+2020-07-07 11:23:31.149 -05:00 [INF] Starting IdentityServer4 version 3.1.0.0
+2020-07-07 11:23:31.283 -05:00 [INF] Using the default authentication scheme Identity.Application for IdentityServer
+2020-07-07 11:23:31.283 -05:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for authentication
+2020-07-07 11:23:31.283 -05:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-in
+2020-07-07 11:23:31.284 -05:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-out
+2020-07-07 11:23:31.284 -05:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for challenge
+2020-07-07 11:23:31.284 -05:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for forbid
+2020-07-07 11:23:31.475 -05:00 [DBG] Login Url: /Account/Login
+2020-07-07 11:23:31.476 -05:00 [DBG] Login Return Url Parameter: ReturnUrl
+2020-07-07 11:23:31.476 -05:00 [DBG] Logout Url: /Account/Logout
+2020-07-07 11:23:31.476 -05:00 [DBG] ConsentUrl Url: /consent
+2020-07-07 11:23:31.476 -05:00 [DBG] Consent Return Url Parameter: returnUrl
+2020-07-07 11:23:31.476 -05:00 [DBG] Error Url: /home/error
+2020-07-07 11:23:31.476 -05:00 [DBG] Error Id Parameter: errorId
+2020-07-07 11:23:32.748 -05:00 [INF] AuthenticationScheme: Identity.Application was challenged.
+2020-07-07 11:23:35.984 -05:00 [DBG] CORS request made for path: /Account/Login from origin: null but was ignored because path was not for an allowed IdentityServer CORS endpoint
+2020-07-07 11:23:37.214 -05:00 [INF] {"Username":"alice","Endpoint":"UI","ClientId":null,"Category":"Authentication","Name":"User Login Failure","EventType":"Failure","Id":1001,"Message":"invalid credentials","ActivityId":"80000008-0007-ff00-b63f-84710c7967bb","TimeStamp":"2020-07-07T16:23:37.0000000Z","ProcessId":4832,"LocalIpAddress":"::1:5000","RemoteIpAddress":"::1","$type":"UserLoginFailureEvent"}
+2020-07-07 11:24:50.476 -05:00 [DBG] CORS request made for path: /Account/Login from origin: null but was ignored because path was not for an allowed IdentityServer CORS endpoint
+2020-07-07 11:24:50.690 -05:00 [DBG] Augmenting SignInContext
+2020-07-07 11:24:50.691 -05:00 [DBG] Adding idp claim with value: local
+2020-07-07 11:24:50.691 -05:00 [DBG] Adding auth_time claim with value: 1594139090
+2020-07-07 11:24:50.707 -05:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2020-07-07 11:24:50.709 -05:00 [INF] {"Username":"alice","Provider":null,"ProviderUserId":null,"SubjectId":"1","DisplayName":"alice","Endpoint":"UI","ClientId":null,"Category":"Authentication","Name":"User Login Success","EventType":"Success","Id":1000,"Message":null,"ActivityId":"80000009-0007-ff00-b63f-84710c7967bb","TimeStamp":"2020-07-07T16:24:50.0000000Z","ProcessId":4832,"LocalIpAddress":"::1:5000","RemoteIpAddress":"::1","$type":"UserLoginSuccessEvent"}
+2020-07-07 11:24:50.748 -05:00 [DBG] 0 persisted grants found for 1
+2020-07-07 11:25:01.271 -05:00 [DBG] CORS request made for path: /Account/Logout from origin: null but was ignored because path was not for an allowed IdentityServer CORS endpoint
+2020-07-07 11:25:01.283 -05:00 [INF] AuthenticationScheme: Identity.Application signed out.
+2020-07-07 11:25:01.284 -05:00 [INF] AuthenticationScheme: Identity.External signed out.
+2020-07-07 11:25:01.284 -05:00 [INF] AuthenticationScheme: Identity.TwoFactorUserId signed out.
+2020-07-07 11:25:01.285 -05:00 [INF] {"SubjectId":"1","DisplayName":"Alice Smith","Category":"Authentication","Name":"User Logout Success","EventType":"Success","Id":1002,"Message":null,"ActivityId":"8000000d-0007-ff00-b63f-84710c7967bb","TimeStamp":"2020-07-07T16:25:01.0000000Z","ProcessId":4832,"LocalIpAddress":"::1:5000","RemoteIpAddress":"::1","$type":"UserLogoutSuccessEvent"}
+2020-07-07 11:28:45.543 -05:00 [INF] Starting host...
+2020-07-07 11:28:46.983 -05:00 [INF] Starting IdentityServer4 version 3.1.0.0
+2020-07-07 11:28:47.105 -05:00 [INF] Using the default authentication scheme Identity.Application for IdentityServer
+2020-07-07 11:28:47.105 -05:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for authentication
+2020-07-07 11:28:47.105 -05:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-in
+2020-07-07 11:28:47.105 -05:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-out
+2020-07-07 11:28:47.105 -05:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for challenge
+2020-07-07 11:28:47.105 -05:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for forbid
+2020-07-07 11:28:47.321 -05:00 [DBG] Login Url: /Account/Login
+2020-07-07 11:28:47.323 -05:00 [DBG] Login Return Url Parameter: ReturnUrl
+2020-07-07 11:28:47.323 -05:00 [DBG] Logout Url: /Account/Logout
+2020-07-07 11:28:47.323 -05:00 [DBG] ConsentUrl Url: /consent
+2020-07-07 11:28:47.323 -05:00 [DBG] Consent Return Url Parameter: returnUrl
+2020-07-07 11:28:47.323 -05:00 [DBG] Error Url: /home/error
+2020-07-07 11:28:47.323 -05:00 [DBG] Error Id Parameter: errorId
+2020-07-07 11:28:49.035 -05:00 [INF] AuthenticationScheme: Identity.Application was challenged.
+2020-07-07 11:28:52.029 -05:00 [DBG] CORS request made for path: /Account/Login from origin: null but was ignored because path was not for an allowed IdentityServer CORS endpoint
+2020-07-07 11:28:53.247 -05:00 [WRN] Invalid password for user 1.
+2020-07-07 11:28:53.247 -05:00 [WRN] User 1 failed to provide the correct password.
+2020-07-07 11:28:53.375 -05:00 [INF] {"Username":"alice","Endpoint":"UI","ClientId":null,"Category":"Authentication","Name":"User Login Failure","EventType":"Failure","Id":1001,"Message":"invalid credentials","ActivityId":"80000003-0000-fd00-b63f-84710c7967bb","TimeStamp":"2020-07-07T16:28:53.0000000Z","ProcessId":26576,"LocalIpAddress":"::1:5000","RemoteIpAddress":"::1","$type":"UserLoginFailureEvent"}
+2020-07-07 11:29:07.270 -05:00 [DBG] CORS request made for path: /Account/Login from origin: null but was ignored because path was not for an allowed IdentityServer CORS endpoint
+2020-07-07 11:29:07.315 -05:00 [WRN] Invalid password for user 1.
+2020-07-07 11:29:07.316 -05:00 [WRN] User 1 failed to provide the correct password.
+2020-07-07 11:29:07.322 -05:00 [INF] {"Username":"alice","Endpoint":"UI","ClientId":null,"Category":"Authentication","Name":"User Login Failure","EventType":"Failure","Id":1001,"Message":"invalid credentials","ActivityId":"80000004-0000-fd00-b63f-84710c7967bb","TimeStamp":"2020-07-07T16:29:07.0000000Z","ProcessId":26576,"LocalIpAddress":"::1:5000","RemoteIpAddress":"::1","$type":"UserLoginFailureEvent"}
+2020-07-07 11:29:31.474 -05:00 [DBG] CORS request made for path: /Account/Login from origin: null but was ignored because path was not for an allowed IdentityServer CORS endpoint
+2020-07-07 11:29:31.560 -05:00 [WRN] Invalid password for user 1.
+2020-07-07 11:29:31.560 -05:00 [WRN] User 1 failed to provide the correct password.
+2020-07-07 11:29:31.574 -05:00 [INF] {"Username":"alice","Endpoint":"UI","ClientId":null,"Category":"Authentication","Name":"User Login Failure","EventType":"Failure","Id":1001,"Message":"invalid credentials","ActivityId":"80000005-0000-fd00-b63f-84710c7967bb","TimeStamp":"2020-07-07T16:29:31.0000000Z","ProcessId":26576,"LocalIpAddress":"::1:5000","RemoteIpAddress":"::1","$type":"UserLoginFailureEvent"}
+2020-07-07 11:29:45.339 -05:00 [DBG] CORS request made for path: /Account/Login from origin: null but was ignored because path was not for an allowed IdentityServer CORS endpoint
+2020-07-07 11:29:45.446 -05:00 [DBG] Augmenting SignInContext
+2020-07-07 11:29:45.447 -05:00 [DBG] Adding idp claim with value: local
+2020-07-07 11:29:45.447 -05:00 [DBG] Adding auth_time claim with value: 1594139385
+2020-07-07 11:29:45.464 -05:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2020-07-07 11:29:45.466 -05:00 [INF] {"Username":"alice","Provider":null,"ProviderUserId":null,"SubjectId":"1","DisplayName":"alice","Endpoint":"UI","ClientId":null,"Category":"Authentication","Name":"User Login Success","EventType":"Success","Id":1000,"Message":null,"ActivityId":"80000006-0000-fd00-b63f-84710c7967bb","TimeStamp":"2020-07-07T16:29:45.0000000Z","ProcessId":26576,"LocalIpAddress":"::1:5000","RemoteIpAddress":"::1","$type":"UserLoginSuccessEvent"}
+2020-07-07 11:29:45.500 -05:00 [DBG] 0 persisted grants found for 1
+2020-07-07 12:47:20.958 -05:00 [INF] Starting host...
+2020-07-07 12:47:22.549 -05:00 [INF] Starting IdentityServer4 version 3.1.0.0
+2020-07-07 12:47:22.674 -05:00 [INF] Using the default authentication scheme Identity.Application for IdentityServer
+2020-07-07 12:47:22.675 -05:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for authentication
+2020-07-07 12:47:22.675 -05:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-in
+2020-07-07 12:47:22.675 -05:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-out
+2020-07-07 12:47:22.675 -05:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for challenge
+2020-07-07 12:47:22.675 -05:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for forbid
+2020-07-07 12:47:22.964 -05:00 [DBG] Login Url: /Account/Login
+2020-07-07 12:47:22.965 -05:00 [DBG] Login Return Url Parameter: ReturnUrl
+2020-07-07 12:47:22.965 -05:00 [DBG] Logout Url: /Account/Logout
+2020-07-07 12:47:22.965 -05:00 [DBG] ConsentUrl Url: /consent
+2020-07-07 12:47:22.965 -05:00 [DBG] Consent Return Url Parameter: returnUrl
+2020-07-07 12:47:22.965 -05:00 [DBG] Error Url: /home/error
+2020-07-07 12:47:22.965 -05:00 [DBG] Error Id Parameter: errorId
+2020-07-07 12:47:30.672 -05:00 [INF] Starting host...

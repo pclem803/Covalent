@@ -96,6 +96,7 @@ namespace IdentityServer
             }
 
             // lookup our user and external provider info
+            // lookup our user and external provider info
             var (user, provider, providerUserId, claims) = await FindUserFromExternalProviderAsync(result);
             if (user == null)
             {
@@ -103,6 +104,11 @@ namespace IdentityServer
                 // in this sample we don't show how that would be done, as our sample implementation
                 // simply auto-provisions new external user
                 user = await AutoProvisionUserAsync(provider, providerUserId, claims);
+            }
+
+            if (!user.IsEnabled)
+            {
+                throw new Exception("External authentication error. Local user is disabled.");
             }
 
             // this allows us to collect any additonal claims or properties
@@ -242,7 +248,7 @@ namespace IdentityServer
         {
             // create a list of claims that we want to transfer into our store
             var filtered = new List<Claim>();
-
+ 
             // user's display name
             var name = claims.FirstOrDefault(x => x.Type == JwtClaimTypes.Name)?.Value ??
                 claims.FirstOrDefault(x => x.Type == ClaimTypes.Name)?.Value;
@@ -281,6 +287,8 @@ namespace IdentityServer
             var user = new ApplicationUser
             {
                 UserName = Guid.NewGuid().ToString(),
+                Email = email,
+                IsEnabled = true
             };
             var identityResult = await _userManager.CreateAsync(user);
             if (!identityResult.Succeeded) throw new Exception(identityResult.Errors.First().Description);
