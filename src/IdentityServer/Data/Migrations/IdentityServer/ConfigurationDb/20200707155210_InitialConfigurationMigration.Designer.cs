@@ -3,15 +3,17 @@ using System;
 using IdentityServer.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace IdentityServer.Data.Migrations.IdentityServer.ConfigurationDb
 {
     [DbContext(typeof(ConfigurationDbContext))]
-    partial class ConfigurationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20200707155210_InitialConfigurationMigration")]
+    partial class InitialConfigurationMigration
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -60,17 +62,6 @@ namespace IdentityServer.Data.Migrations.IdentityServer.ConfigurationDb
                         .IsUnique();
 
                     b.ToTable("ApiResources");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Created = new DateTime(2020, 7, 7, 15, 54, 14, 946, DateTimeKind.Utc).AddTicks(5034),
-                            DisplayName = "My Web API",
-                            Enabled = true,
-                            Name = "web_api",
-                            NonEditable = false
-                        });
                 });
 
             modelBuilder.Entity("IdentityServer4.EntityFramework.Entities.ApiResourceClaim", b =>
@@ -162,18 +153,6 @@ namespace IdentityServer.Data.Migrations.IdentityServer.ConfigurationDb
                         .IsUnique();
 
                     b.ToTable("ApiScopes");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            ApiResourceId = 1,
-                            DisplayName = "web_api",
-                            Emphasize = false,
-                            Name = "web_api",
-                            Required = false,
-                            ShowInDiscoveryDocument = true
-                        });
                 });
 
             modelBuilder.Entity("IdentityServer4.EntityFramework.Entities.ApiScopeClaim", b =>
@@ -384,142 +363,6 @@ namespace IdentityServer.Data.Migrations.IdentityServer.ConfigurationDb
                         .IsUnique();
 
                     b.ToTable("Clients");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            AbsoluteRefreshTokenLifetime = 2592000,
-                            AccessTokenLifetime = 3600,
-                            AccessTokenType = 0,
-                            AllowAccessTokensViaBrowser = false,
-                            AllowOfflineAccess = false,
-                            AllowPlainTextPkce = false,
-                            AllowRememberConsent = true,
-                            AlwaysIncludeUserClaimsInIdToken = false,
-                            AlwaysSendClientClaims = false,
-                            AuthorizationCodeLifetime = 300,
-                            BackChannelLogoutSessionRequired = true,
-                            ClientClaimsPrefix = "client_",
-                            ClientId = "client",
-                            Created = new DateTime(2020, 7, 7, 15, 54, 14, 948, DateTimeKind.Utc).AddTicks(5549),
-                            DeviceCodeLifetime = 300,
-                            EnableLocalLogin = true,
-                            Enabled = true,
-                            FrontChannelLogoutSessionRequired = true,
-                            IdentityTokenLifetime = 300,
-                            IncludeJwtId = false,
-                            NonEditable = false,
-                            ProtocolType = "oidc",
-                            RefreshTokenExpiration = 1,
-                            RefreshTokenUsage = 1,
-                            RequireClientSecret = true,
-                            RequireConsent = true,
-                            RequirePkce = false,
-                            SlidingRefreshTokenLifetime = 1296000,
-                            UpdateAccessTokenClaimsOnRefresh = false
-                        },
-                        new
-                        {
-                            Id = 2,
-                            AbsoluteRefreshTokenLifetime = 2592000,
-                            AccessTokenLifetime = 3600,
-                            AccessTokenType = 0,
-                            AllowAccessTokensViaBrowser = false,
-                            AllowOfflineAccess = false,
-                            AllowPlainTextPkce = false,
-                            AllowRememberConsent = true,
-                            AlwaysIncludeUserClaimsInIdToken = false,
-                            AlwaysSendClientClaims = false,
-                            AuthorizationCodeLifetime = 300,
-                            BackChannelLogoutSessionRequired = true,
-                            ClientClaimsPrefix = "client_",
-                            ClientId = "ro.client",
-                            Created = new DateTime(2020, 7, 7, 15, 54, 14, 948, DateTimeKind.Utc).AddTicks(8991),
-                            DeviceCodeLifetime = 300,
-                            EnableLocalLogin = true,
-                            Enabled = true,
-                            FrontChannelLogoutSessionRequired = true,
-                            IdentityTokenLifetime = 300,
-                            IncludeJwtId = false,
-                            NonEditable = false,
-                            ProtocolType = "oidc",
-                            RefreshTokenExpiration = 1,
-                            RefreshTokenUsage = 1,
-                            RequireClientSecret = true,
-                            RequireConsent = true,
-                            RequirePkce = false,
-                            SlidingRefreshTokenLifetime = 1296000,
-                            UpdateAccessTokenClaimsOnRefresh = false
-                        },
-                        new
-                        {
-                            Id = 3,
-                            AbsoluteRefreshTokenLifetime = 2592000,
-                            AccessTokenLifetime = 3600,
-                            AccessTokenType = 0,
-                            AllowAccessTokensViaBrowser = false,
-                            AllowOfflineAccess = true,
-                            AllowPlainTextPkce = false,
-                            AllowRememberConsent = true,
-                            AlwaysIncludeUserClaimsInIdToken = false,
-                            AlwaysSendClientClaims = false,
-                            AuthorizationCodeLifetime = 300,
-                            BackChannelLogoutSessionRequired = true,
-                            ClientClaimsPrefix = "client_",
-                            ClientId = "mvc",
-                            ClientName = "MVC Client",
-                            Created = new DateTime(2020, 7, 7, 15, 54, 14, 948, DateTimeKind.Utc).AddTicks(8994),
-                            DeviceCodeLifetime = 300,
-                            EnableLocalLogin = true,
-                            Enabled = true,
-                            FrontChannelLogoutSessionRequired = true,
-                            IdentityTokenLifetime = 300,
-                            IncludeJwtId = false,
-                            NonEditable = false,
-                            ProtocolType = "oidc",
-                            RefreshTokenExpiration = 1,
-                            RefreshTokenUsage = 1,
-                            RequireClientSecret = true,
-                            RequireConsent = true,
-                            RequirePkce = false,
-                            SlidingRefreshTokenLifetime = 1296000,
-                            UpdateAccessTokenClaimsOnRefresh = false
-                        },
-                        new
-                        {
-                            Id = 4,
-                            AbsoluteRefreshTokenLifetime = 2592000,
-                            AccessTokenLifetime = 3600,
-                            AccessTokenType = 0,
-                            AllowAccessTokensViaBrowser = false,
-                            AllowOfflineAccess = false,
-                            AllowPlainTextPkce = false,
-                            AllowRememberConsent = true,
-                            AlwaysIncludeUserClaimsInIdToken = false,
-                            AlwaysSendClientClaims = false,
-                            AuthorizationCodeLifetime = 300,
-                            BackChannelLogoutSessionRequired = true,
-                            ClientClaimsPrefix = "client_",
-                            ClientId = "js",
-                            ClientName = "JavaScript client",
-                            Created = new DateTime(2020, 7, 7, 15, 54, 14, 948, DateTimeKind.Utc).AddTicks(8995),
-                            DeviceCodeLifetime = 300,
-                            EnableLocalLogin = true,
-                            Enabled = true,
-                            FrontChannelLogoutSessionRequired = true,
-                            IdentityTokenLifetime = 300,
-                            IncludeJwtId = false,
-                            NonEditable = false,
-                            ProtocolType = "oidc",
-                            RefreshTokenExpiration = 1,
-                            RefreshTokenUsage = 1,
-                            RequireClientSecret = false,
-                            RequireConsent = true,
-                            RequirePkce = true,
-                            SlidingRefreshTokenLifetime = 1296000,
-                            UpdateAccessTokenClaimsOnRefresh = false
-                        });
                 });
 
             modelBuilder.Entity("IdentityServer4.EntityFramework.Entities.ClientClaim", b =>
@@ -569,14 +412,6 @@ namespace IdentityServer.Data.Migrations.IdentityServer.ConfigurationDb
                     b.HasIndex("ClientId");
 
                     b.ToTable("ClientCorsOrigins");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            ClientId = 4,
-                            Origin = "http://localhost:5003"
-                        });
                 });
 
             modelBuilder.Entity("IdentityServer4.EntityFramework.Entities.ClientGrantType", b =>
@@ -599,32 +434,6 @@ namespace IdentityServer.Data.Migrations.IdentityServer.ConfigurationDb
                     b.HasIndex("ClientId");
 
                     b.ToTable("ClientGrantTypes");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            ClientId = 1,
-                            GrantType = "client_credentials"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            ClientId = 2,
-                            GrantType = "password"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            ClientId = 3,
-                            GrantType = "hybrid"
-                        },
-                        new
-                        {
-                            Id = 4,
-                            ClientId = 4,
-                            GrantType = "authorization_code"
-                        });
                 });
 
             modelBuilder.Entity("IdentityServer4.EntityFramework.Entities.ClientIdPRestriction", b =>
@@ -669,20 +478,6 @@ namespace IdentityServer.Data.Migrations.IdentityServer.ConfigurationDb
                     b.HasIndex("ClientId");
 
                     b.ToTable("ClientPostLogoutRedirectUris");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            ClientId = 3,
-                            PostLogoutRedirectUri = "http://localhost:5002/signout-callback-oidc"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            ClientId = 4,
-                            PostLogoutRedirectUri = "http://localhost:5003/index.html"
-                        });
                 });
 
             modelBuilder.Entity("IdentityServer4.EntityFramework.Entities.ClientProperty", b =>
@@ -732,20 +527,6 @@ namespace IdentityServer.Data.Migrations.IdentityServer.ConfigurationDb
                     b.HasIndex("ClientId");
 
                     b.ToTable("ClientRedirectUris");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            ClientId = 3,
-                            RedirectUri = "http://localhost:5002/signin-oidc"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            ClientId = 4,
-                            RedirectUri = "http://localhost:5003/callback.html"
-                        });
                 });
 
             modelBuilder.Entity("IdentityServer4.EntityFramework.Entities.ClientScope", b =>
@@ -768,56 +549,6 @@ namespace IdentityServer.Data.Migrations.IdentityServer.ConfigurationDb
                     b.HasIndex("ClientId");
 
                     b.ToTable("ClientScopes");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            ClientId = 3,
-                            Scope = "profile"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            ClientId = 4,
-                            Scope = "profile"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            ClientId = 3,
-                            Scope = "openid"
-                        },
-                        new
-                        {
-                            Id = 4,
-                            ClientId = 4,
-                            Scope = "openid"
-                        },
-                        new
-                        {
-                            Id = 5,
-                            ClientId = 1,
-                            Scope = "web_api"
-                        },
-                        new
-                        {
-                            Id = 6,
-                            ClientId = 2,
-                            Scope = "web_api"
-                        },
-                        new
-                        {
-                            Id = 7,
-                            ClientId = 3,
-                            Scope = "web_api"
-                        },
-                        new
-                        {
-                            Id = 8,
-                            ClientId = 4,
-                            Scope = "web_api"
-                        });
                 });
 
             modelBuilder.Entity("IdentityServer4.EntityFramework.Entities.ClientSecret", b =>
@@ -855,32 +586,6 @@ namespace IdentityServer.Data.Migrations.IdentityServer.ConfigurationDb
                     b.HasIndex("ClientId");
 
                     b.ToTable("ClientSecrets");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            ClientId = 1,
-                            Created = new DateTime(2020, 7, 7, 15, 54, 14, 949, DateTimeKind.Utc).AddTicks(2502),
-                            Type = "SharedSecret",
-                            Value = "K7gNU3sdo+OL0wNhqoVWhr3g6s1xYv72ol/pe/Unols="
-                        },
-                        new
-                        {
-                            Id = 2,
-                            ClientId = 2,
-                            Created = new DateTime(2020, 7, 7, 15, 54, 14, 951, DateTimeKind.Utc).AddTicks(4084),
-                            Type = "SharedSecret",
-                            Value = "K7gNU3sdo+OL0wNhqoVWhr3g6s1xYv72ol/pe/Unols="
-                        },
-                        new
-                        {
-                            Id = 3,
-                            ClientId = 3,
-                            Created = new DateTime(2020, 7, 7, 15, 54, 14, 951, DateTimeKind.Utc).AddTicks(4374),
-                            Type = "SharedSecret",
-                            Value = "K7gNU3sdo+OL0wNhqoVWhr3g6s1xYv72ol/pe/Unols="
-                        });
                 });
 
             modelBuilder.Entity("IdentityServer4.EntityFramework.Entities.IdentityClaim", b =>
@@ -903,44 +608,6 @@ namespace IdentityServer.Data.Migrations.IdentityServer.ConfigurationDb
                     b.HasIndex("IdentityResourceId");
 
                     b.ToTable("IdentityClaims");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            IdentityResourceId = 1,
-                            Type = "sub"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            IdentityResourceId = 2,
-                            Type = "email"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            IdentityResourceId = 2,
-                            Type = "website"
-                        },
-                        new
-                        {
-                            Id = 4,
-                            IdentityResourceId = 2,
-                            Type = "given_name"
-                        },
-                        new
-                        {
-                            Id = 5,
-                            IdentityResourceId = 2,
-                            Type = "family_name"
-                        },
-                        new
-                        {
-                            Id = 6,
-                            IdentityResourceId = 2,
-                            Type = "name"
-                        });
                 });
 
             modelBuilder.Entity("IdentityServer4.EntityFramework.Entities.IdentityResource", b =>
@@ -990,33 +657,6 @@ namespace IdentityServer.Data.Migrations.IdentityServer.ConfigurationDb
                         .IsUnique();
 
                     b.ToTable("IdentityResources");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Created = new DateTime(2020, 7, 7, 15, 54, 14, 948, DateTimeKind.Utc).AddTicks(1295),
-                            DisplayName = "Your user identifier",
-                            Emphasize = false,
-                            Enabled = true,
-                            Name = "openid",
-                            NonEditable = false,
-                            Required = true,
-                            ShowInDiscoveryDocument = true
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Created = new DateTime(2020, 7, 7, 15, 54, 14, 948, DateTimeKind.Utc).AddTicks(2239),
-                            Description = "Your user profile information (first name, last name, etc.)",
-                            DisplayName = "User profile",
-                            Emphasize = true,
-                            Enabled = true,
-                            Name = "profile",
-                            NonEditable = false,
-                            Required = false,
-                            ShowInDiscoveryDocument = true
-                        });
                 });
 
             modelBuilder.Entity("IdentityServer4.EntityFramework.Entities.IdentityResourceProperty", b =>
