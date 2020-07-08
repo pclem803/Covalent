@@ -1,19 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
+using IdentityModel;
 using IdentityServer.Models;
+using IdentityServer4.EntityFramework.Entities;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 
-namespace IdentityServer.Models
+namespace IdentityServer.Data
 {
     public class IdentityDbContext : IdentityDbContext<ApplicationUser>
     {
         public IdentityDbContext(DbContextOptions<IdentityDbContext> options)
             : base(options)
         {
+
         }
 
         protected override void OnModelCreating(ModelBuilder builder)
@@ -45,7 +50,7 @@ namespace IdentityServer.Models
                 NormalizedUserName = "BOB",
                 Email = "BobSmith@email.com",
                 NormalizedEmail = "bobsmith@email.com".ToUpper(),
-                EmailConfirmed = true,
+                EmailConfirmed = true
             };
             bob.PasswordHash = new PasswordHasher<ApplicationUser>().HashPassword(bob, password);
 

@@ -26,6 +26,8 @@ namespace IdentityServer.Data
             ClientSeed(modelBuilder);
         }
 
+
+
         private void ClientSeed(ModelBuilder builder)
         {
             builder.Entity<ApiResource>()
@@ -273,27 +275,27 @@ namespace IdentityServer.Data
 
             builder.Entity<ClientSecret>()
                 .HasData(
-                        new ClientSecret
-                        {
-                            Id = 1,
-                            Value = "secret".ToSha256(),
-                            Type = "SharedSecret",
-                            ClientId = 1
-                        },
-                        new ClientSecret
-                        {
-                            Id = 2,
-                            Value = "secret".ToSha256(),
-                            Type = "SharedSecret",
-                            ClientId = 2
-                        },
-                        new ClientSecret
-                        {
-                            Id = 3,
-                            Value = "secret".ToSha256(),
-                            Type = "SharedSecret",
-                            ClientId = 3
-                        });
+                     new ClientSecret
+                     {
+                         Id = 1,
+                         Value = "secret".ToSha256(),
+                         Type = "SharedSecret",
+                         ClientId = 1
+                     },
+                     new ClientSecret
+                     {
+                         Id = 2,
+                         Value = "secret".ToSha256(),
+                         Type = "SharedSecret",
+                         ClientId = 2
+                     },
+                     new ClientSecret
+                     {
+                         Id = 3,
+                         Value = "secret".ToSha256(),
+                         Type = "SharedSecret",
+                         ClientId = 3
+                     });
 
             builder.Entity<ClientPostLogoutRedirectUri>()
                 .HasData(

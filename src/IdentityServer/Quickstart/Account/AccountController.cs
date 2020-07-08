@@ -17,6 +17,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using IdentityServer.Models;
 using Microsoft.AspNetCore.Identity;
+using System.Web;
 
 namespace IdentityServer
 {
@@ -143,6 +144,18 @@ namespace IdentityServer
                         {
                             // user might have clicked on a malicious link - should be logged
                             throw new Exception("invalid return URL");
+                        }
+                    }
+                    else if (result.RequiresTwoFactor)
+                    {
+                        string twoFactorUrl = "~/Identity/Account/LoginWith2fa?ReturnUrl={0}";
+                        if (context != null || Url.IsLocalUrl(model.ReturnUrl))
+                        {
+                            return Redirect(string.Format(twoFactorUrl, HttpUtility.UrlEncode(model.ReturnUrl)));
+                        }
+                        else
+                        {
+                            return Redirect(string.Format(twoFactorUrl, HttpUtility.UrlEncode("~/")));
                         }
                     }
                 }

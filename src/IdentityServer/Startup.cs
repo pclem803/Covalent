@@ -16,6 +16,7 @@ using IdentityServer.Data;
 using IdentityServer4.Services;
 using IdentityServer.Services;
 using Microsoft.AspNetCore.Authentication.OpenIdConnect;
+using Microsoft.AspNetCore.Identity.UI.Services;
 using System.Threading.Tasks;
 
 namespace IdentityServer
@@ -37,9 +38,15 @@ namespace IdentityServer
 
             // uncomment, if you want to add an MVC-based UI
             services.AddControllersWithViews();
+            services.AddRazorPages()
+                .AddRazorPagesOptions(options => 
+                    {                        
+                        options.Conventions.AuthorizeAreaFolder("Identity", "/Account/Manage");
+                    });
+            /*https://docs.microsoft.com/en-us/aspnet/core/security/authorization/razor-pages-authorization?view=aspnetcore-3.1 */
 
-            services.AddDbContext<IdentityDbContext>(options => options.UseSqlServer(connectionString, sql => sql.MigrationsAssembly(migrationsAssembly)));
-            services.AddDbContext<Data.ConfigurationDbContext>(options => options.UseSqlServer(connectionString, sql => sql.MigrationsAssembly(migrationsAssembly)));
+            services.AddDbContext<IdentityDbContext>(options => options.UseNpgsql(connectionString, sql => sql.MigrationsAssembly(migrationsAssembly)));
+            services.AddDbContext<Data.ConfigurationDbContext>(options => options.UseNpgsql(connectionString, sql => sql.MigrationsAssembly(migrationsAssembly)));
 
             services.AddIdentity<ApplicationUser, IdentityRole>(options =>
             {
@@ -96,11 +103,11 @@ namespace IdentityServer
             })
             .AddConfigurationStore(options =>
             {
-                options.ConfigureDbContext = b => b.UseSqlServer(connectionString, sql => sql.MigrationsAssembly(migrationsAssembly));
+                options.ConfigureDbContext = b => b.UseNpgsql(connectionString, sql => sql.MigrationsAssembly(migrationsAssembly));
             })
             .AddOperationalStore(options =>
             {
-                options.ConfigureDbContext = b => b.UseSqlServer(connectionString, sql => sql.MigrationsAssembly(migrationsAssembly));
+                options.ConfigureDbContext = b => b.UseNpgsql(connectionString, sql => sql.MigrationsAssembly(migrationsAssembly));
                 options.EnableTokenCleanup = true;
             })
             .AddAspNetIdentity<ApplicationUser>();
@@ -108,9 +115,9 @@ namespace IdentityServer
             // not recommended for production - you need to store your key material somewhere secure
             builder.AddDeveloperSigningCredential();
 
-
+                        
             services.AddScoped<IProfileService, ProfileService>();
-
+            services.AddTransient<IEmailSender, EmailSender>();
         }
 
         public void Configure(IApplicationBuilder app)
@@ -121,17 +128,23 @@ namespace IdentityServer
             }
 
             // uncomment if you want to add MVC
+            app.UseHttpsRedirection();
             app.UseStaticFiles();
-            app.UseAuthentication();
+            
             app.UseRouting();
 
             app.UseIdentityServer();
 
-            // uncomment, if you want to add MVC
+            app.UseAuthentication();
             app.UseAuthorization();
+
+            // uncomment, if you want to add MVC
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapDefaultControllerRoute();
+                endpoints.MapControllerRoute(
+                    name: "default",
+                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                endpoints.MapRazorPages();
             });
         }
     }
