@@ -18,6 +18,7 @@ using System.Threading.Tasks;
 using IdentityServer.Models;
 using Microsoft.AspNetCore.Identity;
 using System.Web;
+using IdentityServer.Services;
 
 namespace IdentityServer
 {
@@ -36,6 +37,7 @@ namespace IdentityServer
         private readonly IEventService _events;
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly SignInManager<ApplicationUser> _signInManager;
+        private readonly Fido2Storage _fido2Storage;
 
         public AccountController(
             IIdentityServerInteractionService interaction,
@@ -43,7 +45,8 @@ namespace IdentityServer
             IAuthenticationSchemeProvider schemeProvider,
             IEventService events,
             UserManager<ApplicationUser> userManager,
-            SignInManager<ApplicationUser> signInManager)
+            SignInManager<ApplicationUser> signInManager,
+            Fido2Storage fido2Storage)
         {
             _userManager = userManager;
             _signInManager = signInManager;
@@ -51,6 +54,7 @@ namespace IdentityServer
             _clientStore = clientStore;
             _schemeProvider = schemeProvider;
             _events = events;
+            _fido2Storage = fido2Storage;
         }
 
         /// <summary>
@@ -148,7 +152,17 @@ namespace IdentityServer
                     }
                     else if (result.RequiresTwoFactor)
                     {
-                        string twoFactorUrl = "~/Identity/Account/LoginWith2fa?ReturnUrl={0}";
+                        string twoFactorUrl;
+                        var fido2ItemExistsForUser = await _fido2Storage.GetCredentialsByUsername(model.Username);
+                        if (fido2ItemExistsForUser.Count > 0)
+                        {
+                            twoFactorUrl = "~/Identity/Account/LoginFido2Mfa?ReturnUrl={0}";
+                        }
+                        else
+                        {
+                            twoFactorUrl = "~/Identity/Account/LoginWith2fa?ReturnUrl={0}";
+                        }
+
                         if (context != null || Url.IsLocalUrl(model.ReturnUrl))
                         {
                             return Redirect(string.Format(twoFactorUrl, HttpUtility.UrlEncode(model.ReturnUrl)));

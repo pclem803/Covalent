@@ -17,6 +17,7 @@ using IdentityServer4.Services;
 using IdentityServer.Services;
 using Microsoft.AspNetCore.Authentication.OpenIdConnect;
 using Microsoft.AspNetCore.Identity.UI.Services;
+using IdentityServer.Providers;
 using System.Threading.Tasks;
 
 namespace IdentityServer
@@ -37,7 +38,7 @@ namespace IdentityServer
             var migrationsAssembly = typeof(Startup).GetTypeInfo().Assembly.GetName().Name;
 
             // uncomment, if you want to add an MVC-based UI
-            services.AddControllersWithViews();
+            services.AddControllersWithViews().AddNewtonsoftJson();
             services.AddRazorPages()
                 .AddRazorPagesOptions(options => 
                     {                        
@@ -45,16 +46,20 @@ namespace IdentityServer
                     });
             /*https://docs.microsoft.com/en-us/aspnet/core/security/authorization/razor-pages-authorization?view=aspnetcore-3.1 */
 
-            services.AddDbContext<IdentityDbContext>(options => options.UseNpgsql(connectionString, sql => sql.MigrationsAssembly(migrationsAssembly)));
-            services.AddDbContext<Data.ConfigurationDbContext>(options => options.UseNpgsql(connectionString, sql => sql.MigrationsAssembly(migrationsAssembly)));
+            services.AddDbContext<IdentityDbContext>(options => options.UseSqlServer(connectionString, sql => sql.MigrationsAssembly(migrationsAssembly)));
+            services.AddDbContext<Data.ConfigurationDbContext>(options => options.UseSqlServer(connectionString, sql => sql.MigrationsAssembly(migrationsAssembly)));
+
+            services.AddScoped<Fido2Storage>();
+            services.AddDistributedMemoryCache();
 
             services.AddIdentity<ApplicationUser, IdentityRole>(options =>
             {
                 options.SignIn.RequireConfirmedEmail = true;
             })
                 .AddEntityFrameworkStores<IdentityDbContext>()
-                .AddDefaultTokenProviders();
-
+                .AddDefaultTokenProviders()
+                .AddTokenProvider<Fido2TokenProvider>("FIDO2");
+            
             services.AddAuthentication()
                 .AddOpenIdConnect("azuread", "Azure AD", options => Configuration.Bind("AzureAd", options))
                 .AddOpenIdConnect("okta", "Okta", options => Configuration.Bind("Okta", options));
@@ -103,11 +108,11 @@ namespace IdentityServer
             })
             .AddConfigurationStore(options =>
             {
-                options.ConfigureDbContext = b => b.UseNpgsql(connectionString, sql => sql.MigrationsAssembly(migrationsAssembly));
+                options.ConfigureDbContext = b => b.UseSqlServer(connectionString, sql => sql.MigrationsAssembly(migrationsAssembly));
             })
             .AddOperationalStore(options =>
             {
-                options.ConfigureDbContext = b => b.UseNpgsql(connectionString, sql => sql.MigrationsAssembly(migrationsAssembly));
+                options.ConfigureDbContext = b => b.UseSqlServer(connectionString, sql => sql.MigrationsAssembly(migrationsAssembly));
                 options.EnableTokenCleanup = true;
             })
             .AddAspNetIdentity<ApplicationUser>();

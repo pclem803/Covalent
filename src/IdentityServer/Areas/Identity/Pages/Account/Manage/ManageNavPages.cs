@@ -32,6 +32,9 @@ namespace IdentityServer.Areas.Identity.Pages.Account.Manage
 
         public static string TwoFactorAuthenticationNavClass(ViewContext viewContext) => PageNavClass(viewContext, TwoFactorAuthentication);
 
+        public static string Fido2Mfa => "Fido2Mfa";
+        public static string Fido2MfaNavClass(ViewContext viewContext) => PageNavClass(viewContext, Fido2Mfa);
+
         private static string PageNavClass(ViewContext viewContext, string page)
         {
             var activePage = viewContext.ViewData["ActivePage"] as string

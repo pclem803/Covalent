@@ -21,8 +21,11 @@ namespace IdentityServer.Data
 
         }
 
+        public DbSet<FidoStoredCredential> FidoStoredCredential { get; set; }
+
         protected override void OnModelCreating(ModelBuilder builder)
         {
+            builder.Entity<FidoStoredCredential>().HasKey(f => f.Username);
             base.OnModelCreating(builder);
             //seed data
             UsersSeed(builder);
