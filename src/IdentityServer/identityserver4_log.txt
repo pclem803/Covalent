@@ -965,3 +965,34 @@ System.Security.Cryptography.CryptographicException: The payload was invalid.
 2020-07-14 10:14:35.827 -05:00 [INF] AuthenticationScheme: Identity.External signed out.
 2020-07-14 10:14:35.827 -05:00 [INF] AuthenticationScheme: Identity.TwoFactorUserId signed out.
 2020-07-14 10:14:35.828 -05:00 [INF] {"SubjectId":"1","DisplayName":"Alice Smith","Category":"Authentication","Name":"User Logout Success","EventType":"Success","Id":1002,"Message":null,"ActivityId":"80000052-0001-fb00-b63f-84710c7967bb","TimeStamp":"2020-07-14T15:14:35.0000000Z","ProcessId":21048,"LocalIpAddress":"::1:5000","RemoteIpAddress":"::1","$type":"UserLogoutSuccessEvent"}
+2020-07-14 10:23:21.491 -05:00 [INF] Starting host...
+2020-07-14 10:24:33.077 -05:00 [INF] Starting host...
+2020-07-14 10:24:35.330 -05:00 [INF] Starting IdentityServer4 version 3.1.0.0
+2020-07-14 10:24:35.507 -05:00 [INF] Using the default authentication scheme Identity.Application for IdentityServer
+2020-07-14 10:24:35.507 -05:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for authentication
+2020-07-14 10:24:35.507 -05:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-in
+2020-07-14 10:24:35.508 -05:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-out
+2020-07-14 10:24:35.508 -05:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for challenge
+2020-07-14 10:24:35.508 -05:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for forbid
+2020-07-14 10:24:35.743 -05:00 [WRN] Failed to determine the https port for redirect.
+2020-07-14 10:24:35.875 -05:00 [DBG] Login Url: /Account/Login
+2020-07-14 10:24:35.876 -05:00 [DBG] Login Return Url Parameter: ReturnUrl
+2020-07-14 10:24:35.876 -05:00 [DBG] Logout Url: /Account/Logout
+2020-07-14 10:24:35.876 -05:00 [DBG] ConsentUrl Url: /consent
+2020-07-14 10:24:35.876 -05:00 [DBG] Consent Return Url Parameter: returnUrl
+2020-07-14 10:24:35.876 -05:00 [DBG] Error Url: /home/error
+2020-07-14 10:24:35.876 -05:00 [DBG] Error Id Parameter: errorId
+2020-07-14 10:24:38.556 -05:00 [INF] AuthenticationScheme: Identity.Application was challenged.
+2020-07-14 10:24:44.171 -05:00 [DBG] CORS request made for path: /Account/Login from origin: null but was ignored because path was not for an allowed IdentityServer CORS endpoint
+2020-07-14 10:24:46.210 -05:00 [INF] AuthenticationScheme: Identity.TwoFactorUserId signed in.
+2020-07-14 10:24:50.982 -05:00 [INF] AuthenticationScheme: Identity.TwoFactorUserId signed out.
+2020-07-14 10:24:51.040 -05:00 [DBG] Augmenting SignInContext
+2020-07-14 10:24:51.041 -05:00 [DBG] Adding idp claim with value: local
+2020-07-14 10:24:51.041 -05:00 [DBG] Adding auth_time claim with value: 1594740291
+2020-07-14 10:24:51.053 -05:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2020-07-14 10:24:52.141 -05:00 [DBG] 0 persisted grants found for 1
+2020-07-14 10:24:58.922 -05:00 [DBG] CORS request made for path: /Account/Logout from origin: null but was ignored because path was not for an allowed IdentityServer CORS endpoint
+2020-07-14 10:24:58.934 -05:00 [INF] AuthenticationScheme: Identity.Application signed out.
+2020-07-14 10:24:58.934 -05:00 [INF] AuthenticationScheme: Identity.External signed out.
+2020-07-14 10:24:58.934 -05:00 [INF] AuthenticationScheme: Identity.TwoFactorUserId signed out.
+2020-07-14 10:24:58.943 -05:00 [INF] {"SubjectId":"1","DisplayName":"Alice Smith","Category":"Authentication","Name":"User Logout Success","EventType":"Success","Id":1002,"Message":null,"ActivityId":"8000000e-0000-fd00-b63f-84710c7967bb","TimeStamp":"2020-07-14T15:24:58.0000000Z","ProcessId":16628,"LocalIpAddress":"::1:5000","RemoteIpAddress":"::1","$type":"UserLogoutSuccessEvent"}
