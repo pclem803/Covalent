@@ -60,37 +60,37 @@ namespace IdentityServer
                 .AddDefaultTokenProviders()
                 .AddTokenProvider<Fido2TokenProvider>("FIDO2");
             
-            services.AddAuthentication()
-                .AddOpenIdConnect("azuread", "Azure AD", options => Configuration.Bind("AzureAd", options))
-                .AddOpenIdConnect("okta", "Okta", options => Configuration.Bind("Okta", options));
-            services.Configure<OpenIdConnectOptions>("azuread", options =>
-            {
-                options.Scope.Add("openid");
-                options.Scope.Add("profile");
-                options.Events = new OpenIdConnectEvents()
-                {
-                    OnRedirectToIdentityProviderForSignOut = context =>
-                    {
-                        context.HandleResponse();
-                        context.Response.Redirect("/Account/Logout");
-                        return Task.FromResult(0);
-                    }
-                };
-            });
-            services.Configure<OpenIdConnectOptions>("okta", options =>
-            {
-                options.Scope.Add("openid");
-                options.Scope.Add("profile");
-                options.Events = new OpenIdConnectEvents()
-                {
-                    OnRedirectToIdentityProviderForSignOut = context =>
-                    {
-                        context.HandleResponse();
-                        context.Response.Redirect("/Account/Logout");
-                        return Task.FromResult(0);
-                    }
-                };
-            });
+            //services.AddAuthentication()
+            //    .AddOpenIdConnect("azuread", "Azure AD", options => Configuration.Bind("AzureAd", options))
+            //    .AddOpenIdConnect("okta", "Okta", options => Configuration.Bind("Okta", options));
+            //services.Configure<OpenIdConnectOptions>("azuread", options =>
+            //{
+            //    options.Scope.Add("openid");
+            //    options.Scope.Add("profile");
+            //    options.Events = new OpenIdConnectEvents()
+            //    {
+            //        OnRedirectToIdentityProviderForSignOut = context =>
+            //        {
+            //            context.HandleResponse();
+            //            context.Response.Redirect("/Account/Logout");
+            //            return Task.FromResult(0);
+            //        }
+            //    };
+            //});
+            //services.Configure<OpenIdConnectOptions>("okta", options =>
+            //{
+            //    options.Scope.Add("openid");
+            //    options.Scope.Add("profile");
+            //    options.Events = new OpenIdConnectEvents()
+            //    {
+            //        OnRedirectToIdentityProviderForSignOut = context =>
+            //        {
+            //            context.HandleResponse();
+            //            context.Response.Redirect("/Account/Logout");
+            //            return Task.FromResult(0);
+            //        }
+            //    };
+            //});
 
             var builder = services.AddIdentityServer(options =>
             {

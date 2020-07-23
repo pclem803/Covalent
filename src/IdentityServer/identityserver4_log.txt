@@ -996,3 +996,55 @@ System.Security.Cryptography.CryptographicException: The payload was invalid.
 2020-07-14 10:24:58.934 -05:00 [INF] AuthenticationScheme: Identity.External signed out.
 2020-07-14 10:24:58.934 -05:00 [INF] AuthenticationScheme: Identity.TwoFactorUserId signed out.
 2020-07-14 10:24:58.943 -05:00 [INF] {"SubjectId":"1","DisplayName":"Alice Smith","Category":"Authentication","Name":"User Logout Success","EventType":"Success","Id":1002,"Message":null,"ActivityId":"8000000e-0000-fd00-b63f-84710c7967bb","TimeStamp":"2020-07-14T15:24:58.0000000Z","ProcessId":16628,"LocalIpAddress":"::1:5000","RemoteIpAddress":"::1","$type":"UserLogoutSuccessEvent"}
+2020-07-23 10:05:52.241 -05:00 [INF] Starting host...
+2020-07-23 10:05:53.875 -05:00 [INF] Starting IdentityServer4 version 3.1.0.0
+2020-07-23 10:05:53.993 -05:00 [INF] Using the default authentication scheme Identity.Application for IdentityServer
+2020-07-23 10:05:53.993 -05:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for authentication
+2020-07-23 10:05:53.993 -05:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-in
+2020-07-23 10:05:53.993 -05:00 [DBG] Using Identity.External as default ASP.NET Core scheme for sign-out
+2020-07-23 10:05:53.993 -05:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for challenge
+2020-07-23 10:05:53.993 -05:00 [DBG] Using Identity.Application as default ASP.NET Core scheme for forbid
+2020-07-23 10:05:54.208 -05:00 [WRN] Failed to determine the https port for redirect.
+2020-07-23 10:05:54.240 -05:00 [DBG] Login Url: /Account/Login
+2020-07-23 10:05:54.240 -05:00 [DBG] Login Return Url Parameter: ReturnUrl
+2020-07-23 10:05:54.240 -05:00 [DBG] Logout Url: /Account/Logout
+2020-07-23 10:05:54.240 -05:00 [DBG] ConsentUrl Url: /consent
+2020-07-23 10:05:54.240 -05:00 [DBG] Consent Return Url Parameter: returnUrl
+2020-07-23 10:05:54.240 -05:00 [DBG] Error Url: /home/error
+2020-07-23 10:05:54.240 -05:00 [DBG] Error Id Parameter: errorId
+2020-07-23 10:05:54.280 -05:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2020-07-23 10:05:54.285 -05:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2020-07-23 10:05:54.288 -05:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2020-07-23 10:06:00.170 -05:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2020-07-23 10:06:00.170 -05:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2020-07-23 10:06:00.171 -05:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2020-07-23 10:06:00.180 -05:00 [INF] AuthenticationScheme: Identity.Application was challenged.
+2020-07-23 10:06:00.205 -05:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2020-07-23 10:06:00.206 -05:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2020-07-23 10:06:00.207 -05:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2020-07-23 10:06:14.210 -05:00 [DBG] CORS request made for path: /Account/Login from origin: null but was ignored because path was not for an allowed IdentityServer CORS endpoint
+2020-07-23 10:06:14.231 -05:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2020-07-23 10:06:14.231 -05:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2020-07-23 10:06:14.231 -05:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2020-07-23 10:06:15.984 -05:00 [DBG] Augmenting SignInContext
+2020-07-23 10:06:15.986 -05:00 [DBG] Adding idp claim with value: local
+2020-07-23 10:06:15.986 -05:00 [DBG] Adding auth_time claim with value: 1595516775
+2020-07-23 10:06:15.996 -05:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2020-07-23 10:06:16.001 -05:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2020-07-23 10:06:16.011 -05:00 [INF] {"Username":"alice","Provider":null,"ProviderUserId":null,"SubjectId":"1","DisplayName":"alice","Endpoint":"UI","ClientId":null,"Category":"Authentication","Name":"User Login Success","EventType":"Success","Id":1000,"Message":null,"ActivityId":"8000001a-0001-fe00-b63f-84710c7967bb","TimeStamp":"2020-07-23T15:06:16.0000000Z","ProcessId":19448,"LocalIpAddress":"::1:5000","RemoteIpAddress":"::1","$type":"UserLoginSuccessEvent"}
+2020-07-23 10:06:16.093 -05:00 [DBG] 0 persisted grants found for 1
+2020-07-23 10:06:39.775 -05:00 [DBG] CORS request made for path: /Account/Logout from origin: null but was ignored because path was not for an allowed IdentityServer CORS endpoint
+2020-07-23 10:06:39.789 -05:00 [INF] AuthenticationScheme: Identity.Application signed out.
+2020-07-23 10:06:39.790 -05:00 [INF] AuthenticationScheme: Identity.External signed out.
+2020-07-23 10:06:39.790 -05:00 [INF] AuthenticationScheme: Identity.TwoFactorUserId signed out.
+2020-07-23 10:06:39.791 -05:00 [INF] {"SubjectId":"1","DisplayName":"Alice Smith","Category":"Authentication","Name":"User Logout Success","EventType":"Success","Id":1002,"Message":null,"ActivityId":"80000027-0001-fe00-b63f-84710c7967bb","TimeStamp":"2020-07-23T15:06:39.0000000Z","ProcessId":19448,"LocalIpAddress":"::1:5000","RemoteIpAddress":"::1","$type":"UserLogoutSuccessEvent"}
+2020-07-23 10:06:42.327 -05:00 [INF] AuthenticationScheme: Identity.Application was challenged.
+2020-07-23 10:06:53.305 -05:00 [DBG] CORS request made for path: /Account/Login from origin: null but was ignored because path was not for an allowed IdentityServer CORS endpoint
+2020-07-23 10:06:53.331 -05:00 [INF] AuthenticationScheme: Identity.TwoFactorUserId signed in.
+2020-07-23 10:06:55.710 -05:00 [INF] AuthenticationScheme: Identity.TwoFactorUserId signed out.
+2020-07-23 10:06:55.716 -05:00 [DBG] Augmenting SignInContext
+2020-07-23 10:06:55.716 -05:00 [DBG] Adding idp claim with value: local
+2020-07-23 10:06:55.716 -05:00 [DBG] Adding auth_time claim with value: 1595516815
+2020-07-23 10:06:55.717 -05:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2020-07-23 10:06:56.906 -05:00 [DBG] 0 persisted grants found for 1
+2020-07-23 10:07:04.977 -05:00 [INF] User with ID '1' has disabled 2fa.
